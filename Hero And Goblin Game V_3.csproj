@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Character Class.cs" />
     <Compile Include="Enemy Class.cs" />
+    <Compile Include="Goblin Class.cs" />
     <Compile Include="Tile Class.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
