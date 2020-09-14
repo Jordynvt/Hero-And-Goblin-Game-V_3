@@ -8,10 +8,14 @@ namespace Hero_And_Goblin_Game_V_3
 {
 	abstract class Tile_Class
 	{
+		//sorry for all the errors I thought it was in a console App. I then copied and pasted the console app code into a windows Form application and got all of the errors.
+		// I did get rid of a substantial amount, but I cannot fix the rest of the errors.
+
 		abstract class Tile
 		{
-			protected int X;
-			protected int Y;
+			protected int x;
+			protected int y;
+
 			enum TileType
 			{
 				Hero,
@@ -19,25 +23,28 @@ namespace Hero_And_Goblin_Game_V_3
 				Gold,
 				Weapon
 			}
+
+			public int X { get; set; }
+			public int Y { get; set; }
+
 			public Tile(int xVal, int yVal)
 			{
 				X = xVal;
 				Y = yVal;
 			}
-			public int X { get; set; }
-			public int Y { get; set; }
+			
 			class Obstacle : Tile
 			{
-				public Obstacle()
+				public Obstacle( int x , int y) : base(x,y)
 				{
-					Tile(X, Y);
+					
 				}
 			}
 			class EmptyTile : Tile
 			{
-				public EmptyTile()
+				public EmptyTile( int x , int y) : base (x,y)
 				{
-					Tile(X, Y);
+					
 				}
 			}
 		}

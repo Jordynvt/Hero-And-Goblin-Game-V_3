@@ -8,10 +8,13 @@ namespace Hero_And_Goblin_Game_V_3
 {
 	abstract class Charachter_Class : Tile_Class
 	{
-		protected int HP;
-		protected int MaxHP;
-		protected int Damage;
-		protected string[] Characters_vision;
+		//sorry for all the errors I thought it was in a console App. I then copied and pasted the console app code into a windows Form application and got all of the errors.
+		// I did get rid of a substantial amount, but I cannot fix the rest of the errors.
+
+		protected int hp;
+		protected int maxHP;
+		protected int damage;
+		protected string[] characters_vision;
 
 		enum MovementEnum
 		{
@@ -25,34 +28,41 @@ namespace Hero_And_Goblin_Game_V_3
 		public int MaxHp { get; set; }
 		public int Damage { get; set; }
 		public string[] Characters_vision { get; set; }
-		public Character(int X, int Y, char symbol)
-		{
-
-		}
+		
+		public Charachter_Class(int x , int y, char symbol) : base(x,y)
+        {
+			this.Symbol;
+        }
 		public virtual void Attack(Character target)
 		{
 			target.HP--;
 		}
 		public bool isDead()
 		{
-			if (HP <= 0)
+			if (this.HP >= 0 )
 			{
-				return true;
+				return false;
 			}
 			else
-				return false;
+				return true ;
 		}
-		public virtual bool CheckRange(Character target)
+		public virtual bool CheckRange(target)
 		{
-			if (Math.Abs(target.X - X = 1) || Math.Abs(target.Y - Y = 1){
+			if( DistanceTo(target) <- 1)
+            {
 				return true;
-			}
+            }
 			else
+            {
 				return false;
+            }
+			
 		}
-		private int DistanceTo(Character target)
+		private int DistanceTo(Charachter_Class target)
 		{
-
+			int distance = (this.X - target.X) + (this.Y - target.Y);
+			int value = Math.Abs(distance);
+			return value;
 		}
 		public void Move(MovementEnum move)
 		{
