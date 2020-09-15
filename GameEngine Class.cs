@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hero_And_Goblin_Game_V_3
 {
-    class GameEngine_Class
+    class GameEngine_Class                  //3.3
     {
         //sorry for all the errors I thought it was in a console App. I then copied and pasted the console app code into a windows Form application and got all of the errors.
         // I did get rid of a substantial amount, but I cannot fix the rest of the errors.
@@ -50,7 +50,14 @@ namespace Hero_And_Goblin_Game_V_3
 
         }
 
-        public override string ToString()
+
+        public string EnemyStats()                      //4.1
+        {
+            return map.gblin.ToString();
+            return;
+        }
+
+        public override string ToString()  //4.1
         {
             string R_String = "";
 
@@ -66,10 +73,6 @@ namespace Hero_And_Goblin_Game_V_3
 
         }
 
-        public string EnemyStats()
-        {
-            return map.gblin.ToString();
-            return;
-        }
+      
     }
 }

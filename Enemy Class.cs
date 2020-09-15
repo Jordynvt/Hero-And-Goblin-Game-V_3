@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Hero_And_Goblin_Game_V_3
 {
-    abstract class Enemy_Class : Charachter_Class
+    abstract class Enemy_Class : Charachter_Class                //2.4
     {
 
         //sorry for all the errors I thought it was in a console App. I then copied and pasted the console app code into a windows Form application and got all of the errors.
@@ -35,7 +35,7 @@ namespace Hero_And_Goblin_Game_V_3
             return base.ToString();
         }
 
-         abstract class Goblin_Class : Enemy_Class
+         abstract class Goblin_Class : Enemy_Class              //2.5
         {
             public Goblin(int X, int Y) : base(X, Y)
             {

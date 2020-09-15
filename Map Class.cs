@@ -6,13 +6,20 @@ using System.Threading.Tasks;
 
 namespace Hero_And_Goblin_Game_V_3
 {
-    class Map_Class
+    class Map_Class                                   //3.1
     {
 
         //sorry for all the errors I thought it was in a console App. I then copied and pasted the console app code into a windows Form application and got all of the errors.
         // I did get rid of a substantial amount, but I cannot fix the rest of the errors.
 
         private Random randomNumber = new Random();
+
+
+        char[,] gameMap;
+        object hero;
+        int[] enemies;
+        int mapWidth, mapHeight;
+        Random rnd;
 
         public Goblin Goblin { get; set; }
         public Tile[,] GameMap { get; set; }
@@ -22,7 +29,7 @@ namespace Hero_And_Goblin_Game_V_3
         public int MapHeight { get; set}
 
 
-        public Map(int minwidth , int maxwidth , int maxheight , int minheight , int numberOfEnemies)
+        public Map(int minwidth , int maxwidth , int maxheight , int minheight , int numberOfEnemies)   //3.2
         {
             EnemyArr = new Enemy[numberOfEnemies];
             MapWidth = randomNumber.Next(minwidth, maxwidth);
@@ -63,6 +70,11 @@ namespace Hero_And_Goblin_Game_V_3
                 EnemyArr[k].CharVision[1] = GameMap[EnemyArr[k].Xval - 1; EnemyArr[k].Yval];
                 EnemyArr[k].CharVision[2] = GameMap[EnemyArr[k].Xval, EnemyArr[k].Yval - 1;]
             }
+        }
+         
+        private Tile_Create(TileEnum type)
+        {
+            return;
         }
         public void PlaceObject(Tile obj)
         {
